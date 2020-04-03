@@ -1,3 +1,76 @@
 body {
     background-color: gray;
 }
+
+#screen {
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: white;
+    border: solid black 3px;
+    border-radius: 10%;
+}
+
+#keyboard {
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: rgb(186, 189, 189);
+    border: solid black 3px;
+    border-radius: 10%;
+}
+
+.key {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    background-color: black;
+    color: white;
+    border: solid black 1px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.special-key {
+    width: 67px;
+    height: 30px;
+    margin-left: 5px;
+    background-color: black;
+    color: white;
+    font-size: 80%;
+    border: solid black 1px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.space-key {
+    width: 215px;
+    height: 30px;
+    margin-left: 5px;
+    background-color: black;
+    border: solid black 1px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.key:hover,
+.special-key:hover,
+.space-key:hover {
+    border: solid white 1px;
+    cursor: pointer;
+}
+
+.first-line {
+    display: flex;
+    margin: 75px 0 5px 25px;
+}
+
+.second-line,
+.third-line,
+.fourth-line,
+.fifth-line {
+    display: flex;
+    margin: 5px 0 0 25px;
+}

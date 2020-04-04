@@ -1,4 +1,3 @@
-//на onload повесить функцию render которая будет отрисовывать всю клавиатуру
 const body = document.getElementsByTagName('body'),
     tagBody = body[0];
 
@@ -10,7 +9,36 @@ keyboard.insertAdjacentHTML('afterbegin', '<div class="third-line"><div class="s
 keyboard.insertAdjacentHTML('afterbegin', '<div class="second-line"><div class="special-key">Tab</div><div class="key">q</div><div class="key">w</div><div class="key">e</div><div class="key">r</div><div class="key">t</div><div class="key">y</div><div class="key">u</div><div class="key">i</div><div class="key">o</div><div class="key">p</div><div class="key">[</div><div class="key">]</div><div class="key">Del</div></div>');
 keyboard.insertAdjacentHTML('afterbegin', '<div class="first-line"><div class="key">`</div><div class="key">1</div><div class="key">2</div><div class="key">3</div><div class="key">4</div><div class="key">5</div><div class="key">6</div><div class="key">7</div><div class="key">8</div><div class="key">9</div><div class="key">0</div><div class="key">-</div><div class="key">=</div><div class="special-key">Backspace</div></div>');
 
+const screenInput = document.getElementById('screen');
+
+screenInput.insertAdjacentHTML('afterbegin', '<div class="input-screen"><div id="input-area"></div></div>');
+
+const screenArea = document.getElementById('input-area');
+
+document.onkeypress = function(event) {
+    screenArea.innerText += event.key;
+}
+
+
+
+
+
+
+
+
+
 /*
+document.addEventListener('keydown', function(event) {
+    //if (event.code == 'KeyA' && (event.shiftKey || event.metaKey)) {
+    //    alert(event.key);
+    //}
+    if (event.code == 'KeyA') {
+        //alert(event.key);
+        //sceenInput.innerText('event.key');
+        screenArea.innerText += event.key;
+    }
+});
+
 function renderScreen() {
     tagBody.insertAdjacentHTML('afterBegin', '<div id="screen"></div>');
 }
@@ -22,11 +50,37 @@ function renderKeyboard() {
     tagBody.insertAdjacentHTML('beforeend', '<div id="keyboard"></div>');
 }
 
-
-
 function renderLaptop() {
     renderScreen();
     renderKeyboard();
     renderKeys();
 }
+*/
+
+//для вывода букв (символы, зависящие от раскладки)использовать event.key для работы сочетания клавишь event.code
+
+/*
+КРИВАЯ ОТРИСОВКА ЧЕРЕЗ ЦИКЛ И МАССИВ
+const body = document.getElementsByTagName('body'),
+    tagBody = body[0];
+
+tagBody.insertAdjacentHTML('afterBegin', '<div id="screen"></div>');
+tagBody.insertAdjacentHTML('beforeend', '<div id="keyboard"></div>');
+
+
+const allKeys = [192, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 189, 187, 8, 9, 81, 87, 69, 82, 84, 89, 85, 73, 79, 80, 219, 221, 46, 20, 65, 83, 68, 70, 71, 72, 74, 75, 76, 186, 222, 13, 16, 90, 88, 67, 86, 66, 78, 77, 188, 190, 191, 38, 16, 17, 91, 18, 32, 18, 17, 37, 40, 39, 220];
+
+
+function renderKeys() {
+    let out = '';
+    for (let i = 0; i < allKeys.length; i++) {
+        if (i === 13 || i === 27 || i === 40 || i === 53) {
+            out += '<div class="clearfix"></div>';
+        }
+        out += '<div class="key">' + String.fromCharCode(allKeys[i]) + '</div>';
+    }
+    document.querySelector('#keyboard').innerHTML = out;
+}
+
+renderKeys();
 */

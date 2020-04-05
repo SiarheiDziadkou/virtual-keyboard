@@ -5,22 +5,47 @@ tagBody.insertAdjacentHTML('afterBegin', '<div id="screen"></div>');
 tagBody.insertAdjacentHTML('beforeend', '<div id="keyboard"></div>');
 keyboard.insertAdjacentHTML('afterbegin', '<div class="fifth-line"><div class="key">Ctrl</div><div class="key">Win</div><div class="key">Alt</div><div class="space-key"> </div><div class="key">Alt</div><div class="key">Ctrl</div><div class="key">&larr;</div><div class="key">&darr;</div><div class="key">&rarr;</div><div class="key">&#8726;</div></div>');
 keyboard.insertAdjacentHTML('afterbegin', '<div class="fourth-line"><div class="special-key">Shift</div><div class="key">z</div><div class="key">x</div><div class="key">c</div><div class="key">v</div><div class="key">b</div><div class="key">n</div><div class="key">m</div><div class="key">,</div><div class="key">.</div><div class="key">/</div><div class="key">&uarr;</div><div class="special-key">Shift</div></div>');
-keyboard.insertAdjacentHTML('afterbegin', '<div class="third-line"><div class="special-key">Caps Lock</div><div class="key">a</div><div class="key">s</div><div class="key">d</div><div class="key">f</div><div class="key">g</div><div class="key">h</div><div class="key">j</div><div class="key">k</div><div class="key">l</div><div class="key">;</div><div class="key">&prime;</div><div class="special-key">Enter</div></div>');
-keyboard.insertAdjacentHTML('afterbegin', '<div class="second-line"><div class="special-key">Tab</div><div class="key">q</div><div class="key">w</div><div class="key">e</div><div class="key">r</div><div class="key">t</div><div class="key">y</div><div class="key">u</div><div class="key">i</div><div class="key">o</div><div class="key">p</div><div class="key">[</div><div class="key">]</div><div class="key">Del</div></div>');
-keyboard.insertAdjacentHTML('afterbegin', '<div class="first-line"><div class="key">`</div><div class="key">1</div><div class="key">2</div><div class="key">3</div><div class="key">4</div><div class="key">5</div><div class="key">6</div><div class="key">7</div><div class="key">8</div><div class="key">9</div><div class="key">0</div><div class="key">-</div><div class="key">=</div><div class="special-key">Backspace</div></div>');
+keyboard.insertAdjacentHTML('afterbegin', '<div class="third-line"><div id="caps-lock" class="special-key">Caps Lock</div><div class="key">a</div><div class="key">s</div><div class="key">d</div><div class="key">f</div><div class="key">g</div><div class="key">h</div><div class="key">j</div><div class="key">k</div><div class="key">l</div><div class="key">;</div><div class="key">&prime;</div><div class="special-key">Enter</div></div>');
+keyboard.insertAdjacentHTML('afterbegin', '<div class="second-line"><div class="special-key">Tab</div><div class="key" data="81">q</div><div class="key">w</div><div class="key">e</div><div class="key">r</div><div class="key">t</div><div class="key">y</div><div class="key">u</div><div class="key">i</div><div class="key">o</div><div class="key">p</div><div class="key">[</div><div class="key">]</div><div class="key">Del</div></div>');
+keyboard.insertAdjacentHTML('afterbegin', '<div class="first-line"><div class="key">`</div><div class="key"><span class="original">1</span><span class="alternative">!</span></div><div class="key">2</div><div class="key">3</div><div class="key">4</div><div class="key">5</div><div class="key">6</div><div class="key">7</div><div class="key">8</div><div class="key">9</div><div class="key">0</div><div class="key">-</div><div class="key">=</div><div class="special-key">Backspace</div></div>');
 
 const screenInput = document.getElementById('screen');
 
-screenInput.insertAdjacentHTML('afterbegin', '<div class="input-screen"><div id="input-area"></div></div>');
+screenInput.insertAdjacentHTML('afterbegin', '<textarea id="input-area"></textarea>');
 
 const screenArea = document.getElementById('input-area');
 
-document.onkeypress = function(event) {
-    screenArea.innerText += event.key;
-}
+//document.onkeypress = function(event) {
+//    screenArea.textContent += event.key;
+//}
+
+///////////////////// CAPSLOCK ///////////////////////////
+let capsLock = document.getElementById('caps-lock');
+
+document.onkeydown = function(event) {
+        console.log(event);
+        if (event.key == 'CapsLock') {
+            capsLock.classList.toggle('active');
+        }
+    }
+    ///////////////////////////////////////////////////////////
 
 
 
+//.document.onkeypress = function(event) {
+//    document.querySelector('#keyboard .key[data="' + event.keyCode + '"]').classList.add('active')
+//}
+
+/*
+let key = document.querySelectorAll('first-line');
+
+document.addEventListener('keydown', function(event) {
+    if (event.shiftKey) {
+        key.classList.toggle('original');
+        key.classList.toggle('alternative');
+    }
+})
+*/
 
 
 

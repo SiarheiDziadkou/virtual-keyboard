@@ -11,25 +11,28 @@ keyboard.insertAdjacentHTML('afterbegin', '<div class="first-line"><div class="k
 
 const screenInput = document.getElementById('screen');
 
-screenInput.insertAdjacentHTML('afterbegin', '<textarea id="input-area"></textarea>');
+screenInput.insertAdjacentHTML('afterbegin', '<textarea id="input-area" autofocus></textarea>');
 
 const screenArea = document.getElementById('input-area');
 
-//document.onkeypress = function(event) {
-//    screenArea.textContent += event.key;
-//}
+
 
 ///////////////////// CAPSLOCK ///////////////////////////
 let capsLock = document.getElementById('caps-lock');
 
 document.onkeydown = function(event) {
-        console.log(event);
         if (event.key == 'CapsLock') {
             capsLock.classList.toggle('active');
         }
     }
     ///////////////////////////////////////////////////////////
 
+
+////////////////// СТАРЫЙ ВВОД ЧЕРЕЗ textContent //////////
+//document.onkeypress = function(event) {
+//    screenArea.textContent += event.key;
+//}
+///////////////////////////////////////////////////////////
 
 
 //.document.onkeypress = function(event) {

@@ -97,6 +97,7 @@ body {
     font-size: 1.5em;
     overflow: hidden;
     border-radius: 5px;
+    outline: none;
     border: none;
     resize: none;
 }

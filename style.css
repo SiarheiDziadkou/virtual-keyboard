@@ -1,10 +1,11 @@
 body {
     background-color: gray;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #screen {
     width: 900px;
-    height: 400px;
+    height: 250px;
     margin: 0 auto;
     background-color: white;
     border: solid black 3px;
@@ -12,8 +13,9 @@ body {
 }
 
 #keyboard {
-    width: 900px;
-    height: 400px;
+    width: 860px;
+    height: 350px;
+    padding: 50px 15px 0 15px;
     margin: 0 auto;
     background-color: rgb(186, 189, 189);
     border: solid black 3px;
@@ -23,13 +25,15 @@ body {
 .key {
     width: 50px;
     height: 50px;
-    margin-left: 5px;
+    margin: 0 0 5px 5px;
     background-color: black;
     color: white;
+    font-size: 1.5em;
     border: solid black 1px;
     border-radius: 5px;
     text-align: center;
     line-height: 50px;
+    float: left;
 }
 
 .special-key {
@@ -64,7 +68,7 @@ body {
 
 .first-line {
     display: flex;
-    margin: 60px 0 5px 20px;
+    margin: 30px 0 5px 20px;
 }
 
 .second-line,
@@ -73,6 +77,10 @@ body {
 .fifth-line {
     display: flex;
     margin: 5px 0 0 20px;
+}
+
+.alternative {
+    display: none;
 }
 
 
@@ -85,6 +93,20 @@ body {
 */
 
 #input-area {
-    max-width: 860px;
-    margin: 100px 30px;
+    width: 850px;
+    height: 200px;
+    margin: 20px;
+    background-color: white;
+    color: black;
+    font-size: 1.5em;
+    overflow: hidden;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+.active {
+    background-color: greenyellow;
+    COLOR: black;
 }

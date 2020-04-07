@@ -83,15 +83,6 @@ body {
     display: none;
 }
 
-
-/*
-.input-screen {
-    min-height: 50px;
-    margin: 100px 30px;
-    border: solid red 1px;
-}
-*/
-
 #input-area {
     width: 850px;
     height: 200px;
@@ -108,5 +99,13 @@ body {
 
 .active {
     background-color: greenyellow;
-    COLOR: black;
+    color: black;
+}
+
+#description {
+    position: relative;
+    width: 600px;
+    top: -70px;
+    left: 150px;
+    justify-content: center;
 }
